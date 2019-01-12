@@ -1,0 +1,31 @@
+.card img {
+    height: 150px;
+    padding: 14px 64px;
+}
+
+.btn-secondary {
+    color: white !important
+}
+
+.qteText {
+    text-align: center;
+    font-size: 22px;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.card-title, .card-text {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.card-text {
+    text-decoration: underline;
+    font-weight: bold
+}
+
+.card-footer {
+    padding: 0;
+}

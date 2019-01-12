@@ -1,0 +1,29 @@
+header {
+    background: #6c757d;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+router-outlet {
+    display: none;
+}
+
+#content {
+    width: 1070px;
+    margin: 25px auto;
+    padding-top: 10px;
+    position: relative;
+}
+
+#content>* {
+    display: block
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 80px;
+    opacity: 0.8;
+    letter-spacing: 5.5px;
+}

@@ -1,0 +1,107 @@
+<form #f="ngForm" (ngSubmit)=save(f.value)>
+  <div class="row">
+    <div class=" form-group col-9">
+      <label>Title :</label>
+      <input required minlength="6" type="text" ngModel name="title" #title="ngModel" class=" form-control">
+      <div class="alert alert-dark" *ngIf="title.touched && !title.valid">
+        <div *ngIf="title.errors.required"> Title Is Required !</div>
+        <div *ngIf="title.errors.minlength"> Title Must Be More Then 6 Characters </div>
+      </div>
+
+    </div>
+    <div class=" form-group col-3">
+      <label>Price :</label>
+      <input required maxlength="7" type="text" ngModel name="price" #price="ngModel" number class="form-control">
+      <div class="alert alert-dark" *ngIf="price.touched && !price.valid">
+        <div *ngIf="price.errors?.required"> Price Is Required !</div>
+        <div *ngIf="price.errors?.number"> Price Must Be A Number !</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-7 form-group">
+      <label>Description :</label>
+      <textarea required ngModel name="description" #des="ngModel" cols="30" rows="8" class=" form-control"></textarea>
+      <div class="alert alert-dark" *ngIf="des.touched && des.errors?.required">Fill The Description !</div>
+    </div>
+    <div class="col-5">
+      <div class="form-group">
+        <label>Category :</label>
+        <select name="Category" ngModel #Category="ngModel" (change)="showSub(Category.value)" class="form-control">
+          <option value=""></option>
+          <option *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>subCategory :</label>
+        <select name="subCategory" ngModel class="form-control">
+          <option value=""></option>
+          <option *ngFor="let item of subCategories" [value]="item.id">{{item.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Shipping :</label>
+        <div class="form-control">
+          <label *ngFor="let item of shipping" class="col-4">
+            <input type="radio" ngModel name="shippingMethod" [value]="item">
+            {{item}}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-3">
+      <label>Main Image :</label>
+      <div class=" form-control ">
+        <label class="browse">Browse&hellip; <input type="file" name="mainImg" (change)="setMainImage($event.target.files)"
+            style="display: none;"></label>
+      </div>
+
+      <div class="block ">
+        <img *ngIf="imgPath" [src]="imgPath" class="image col-10">
+      </div>
+
+    </div>
+
+    <div class="form-group col-6">
+      <label>Other Images :</label>
+      <div class="form-control">
+        <label class="browse">Browse&hellip; <input type="file" accept="image/*" multiple (change)="addProductImages($event.target.files)"
+            style="display: none;"></label>
+      </div>
+      <div class="block row">
+        <div *ngFor="let item of PImages" class="small col-2">
+          <img [src]="item.data">
+          <span (click)="removeImage(item.name)" class="remove">X</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-3">
+      <label>Color :</label>
+      <div class="block scroll">
+        <label class="color col-3" *ngFor="let item of colors" [ngStyle]="{'background': item}">
+          <input type="radio" ngModel name="color" [value]="item">
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Description Images :</label>
+    <div class="form-control">
+      <label class="browse">Browse&hellip; <input type="file" accept="image/*" multiple (change)="addDescImages($event.target.files)"
+          style="display: none;"></label>
+    </div>
+    <div class="block c row">
+      <div *ngFor="let item of DesImages" class="small col-1">
+        <img [src]="item.data">
+        <span (click)="removeDescImage(item.name)" class="remove">X</span>
+      </div>
+    </div>
+  </div>
+  <button [disabled]="f.invalid" class="btn ">Submit</button>
+</form>
+
+<p class="formData alert alert-success">
+  {{ f.value | json }}
+</p>

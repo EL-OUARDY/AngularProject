@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+    color: #eee !important
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+nav {
+    text-align: right;
+    padding: 8px 0;
+    width: 1070px;
+    font-size: 20px;
+    margin: 0 auto
+}
+
+span {
+    float: left;
+    color: #eee;
+}
+
+.dropdown-item {
+    color: black !important
+}

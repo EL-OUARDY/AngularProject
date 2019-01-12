@@ -1,0 +1,13 @@
+.btn-secondary {
+    color: white !important
+}
+
+.qteText {
+    text-align: center;
+    font-size: 22px;
+}
+
+a {
+    margin: 2px 0;
+    font-weight: bold
+}
