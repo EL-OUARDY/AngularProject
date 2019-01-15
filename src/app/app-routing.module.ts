@@ -5,9 +5,9 @@ import { SignInUpComponent } from './sign-in-up/sign-in-up.component';
 import { ReduxComponent } from './redux/redux.component';
 import { HomeComponent } from './home/home.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuard } from './auth-guard.service';
 import { AdminGuard } from './admin-guard.guard';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

@@ -29,7 +29,6 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FireAuthService } from './fire-auth.service';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuard } from './auth-guard.service';
 import { FireUserService } from './fire-user.service';
 import { AdminGuard } from './admin-guard.guard';
@@ -39,6 +38,8 @@ import { CustomFormsModule } from 'ng2-validation';
 import { CartService } from './cart.service';
 import { ProductCardComponent } from './product/product-cart/product-card.component';
 import { ProductQuantityComponent } from './product/product-quantity/product-quantity.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -52,9 +53,10 @@ import { ProductQuantityComponent } from './product/product-quantity/product-qua
     ReduxComponent,
     TodoDashboardComponent,
     TodoListComponent,
-    CheckoutComponent,
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    ShoppingCartSummaryComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

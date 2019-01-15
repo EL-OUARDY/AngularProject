@@ -33,12 +33,13 @@
         <th><a (click)="clearCart()" class="btn btn-danger">Clear All</a></th>
         <th></th>
         <th></th>
-        <th></th>
         <th class="text-right">Grand Price:</th>
-        <th>{{cart.grandPrice | currency: 'USD':'symbol'}}</th>
+        <th class="text-center">{{cart.grandPrice | currency: 'USD':'symbol'}}</th>
+        <th><a routerLink="/checkout" class="btn btn-primary">Checkout</a></th>
       </tr>
     </tfoot>
   </table>
+
 </ng-container>
 <ng-template #cartEmpty>
   <div class="empty-cart">

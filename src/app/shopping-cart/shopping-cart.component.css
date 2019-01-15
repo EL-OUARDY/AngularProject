@@ -11,13 +11,13 @@
 .table a {
     padding: 2px 10px;
     color: white;
+    width: 100%;
 }
 
 .empty-cart {
     width: 50vw;
     margin: 0 auto;
     text-align: center;
-    font-family: 'Maison Neue';
     font-weight: 300;
 }
 
