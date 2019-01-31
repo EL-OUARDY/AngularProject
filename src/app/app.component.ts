@@ -9,15 +9,15 @@ import { FireUserService } from './fire-user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // constructor(private userService: FireUserService, private auth: FireAuthService, router: Router) {
-  //   auth.user$.subscribe(user => {
-  //     if (user) {
-  //       userService.save(user);
+  constructor(private userService: FireUserService, private auth: FireAuthService, router: Router) {
+    auth.user$.subscribe(user => {
+      if (user) {
+        userService.save(user);
 
-  //       const returnUrl = localStorage.getItem('returnUrl');
-  //       localStorage.removeItem('returnUrl');
-  //       router.navigateByUrl(returnUrl);
-  //     }
-  //   });
-  // }
+        const returnUrl = localStorage.getItem('returnUrl');
+        localStorage.removeItem('returnUrl');
+        router.navigateByUrl(returnUrl);
+      }
+    });
+  }
 }

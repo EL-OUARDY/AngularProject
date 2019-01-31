@@ -26,10 +26,6 @@ export class AddProductComponent implements OnInit {
     this.shipping = this.productService.getShippings();
   }
 
-  save(f) {
-    console.log(f);
-    // call productService To post the product form
-  }
   showSub(c) {
     this.subCategories = this.categories.find(x => x.id === Number(c)).subCategories;
   }
@@ -106,6 +102,17 @@ export class AddProductComponent implements OnInit {
     return array;
   }
 
+  // Posting The Product
+
+  onSubmit(f) {
+    const n = new FormData();
+    const product = {
+      'Na//me': 'xxx xxxxxx', 'Slug': 'xxx-xxxxxx', 'Price': 10,
+      'Description': 'xxx xxxxxx xxx xxxxxx xxx xxxxxx', 'Date_Added': null, 'OldPrice': null,
+      'Discount': 0, 'SubCategory': null, 'SubCategoryId': 1, 'MainImg': null
+    };
+    this.productService.PostProduct(product);
+  }
 }
 
 interface IPath {

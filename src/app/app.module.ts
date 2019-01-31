@@ -74,7 +74,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+
+    HttpClientModule
   ],
   providers: [
     ProductService,

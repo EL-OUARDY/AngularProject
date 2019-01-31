@@ -8,6 +8,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AuthGuard } from './auth-guard.service';
 import { AdminGuard } from './admin-guard.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutGuard } from './checkout.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'cart', component: ShoppingCartComponent },
   { path: 'redux', component: ReduxComponent },
 
-  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [CheckoutGuard] },
 
   { path: 'add-product', component: AddProductComponent, canActivate: [AdminGuard] },
 ];

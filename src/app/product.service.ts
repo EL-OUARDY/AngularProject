@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  private readonly rootUrl = 'http://localhost:1394/api';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getProducts() {
     return [
@@ -26,5 +28,15 @@ export class ProductService {
 
   getShippings() {
     return ['GearBest', 'Ali Express', 'Other']; // available shipping methods
+  }
+
+  // calling the server
+
+
+  PostProduct(p) {
+
+    this.http.post(this.rootUrl + '/Products', p).subscribe( res => {
+      console.log(res);
+    });
   }
 }

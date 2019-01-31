@@ -7,7 +7,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  shipping = {};
+  shipping: IShipping = { name: '', addressLine1: '', addressLine2: '', phone: '', city: '' };
   shoppingCart;
   constructor(private cartService: CartService) {
   }
@@ -19,5 +19,13 @@ export class CheckoutComponent implements OnInit {
   placeOrder() {
     console.log(this.shipping);
   }
+}
+
+export interface IShipping {
+  name: string;
+  addressLine1: string;
+  addressLine2: string;
+  city: string;
+  phone: string;
 
 }
